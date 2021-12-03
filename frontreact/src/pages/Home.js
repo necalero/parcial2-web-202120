@@ -5,9 +5,10 @@ import { FormattedMessage } from 'react-intl';
 
 export const Home = ({ searchKey }) => {
   const [products, setProducts] = useState([]);
-  const [searchKeyState, setSearchkeyState] = useState(searchKey);
-  const URL = 'http://localhost:3001/api/products?q='+searchKeyState;
+  const [searchKeyState, setSearchkeyState] = useState({searchKeyN:searchKey});
+  const URL = 'http://localhost:3001/api/products?q='+searchKeyState.searchKeyN;
   console.log(searchKey);
+  console.log(URL);
   useEffect(() => {
     axios
       .get(URL)

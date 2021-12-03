@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
+import { LOCALES } from "../i18n/locales";
 import { I18nSelect } from './I18nSelect';
 import "./NavBar.scss";
 
 export const NavBar = ({ onSearchKeyChange, setLanguage }) => {
   const [navState, setNavState] = useState({ showingSearch: false });
-  const [language, setlanguage] = useState({ language: '' });
+
+    
 
   const showSearchContainer = (event) => {
     event.preventDefault();
@@ -31,7 +33,11 @@ export const NavBar = ({ onSearchKeyChange, setLanguage }) => {
               <span onClick={(e) => showSearchContainer(e)}>
                 <i className='material-icons search'>search</i>
               </span>
-              <I18nSelect language={language.language}></I18nSelect>
+              <div className="lang-select-wrapper">
+                <div className="lang-select" onClick={()=>{setLanguage(LOCALES.ENGLISH)}}><p>EN</p></div>
+                <div className="lang-select" onClick={()=>{setLanguage(LOCALES.SPANISH)}}><p>ES</p></div>
+                
+            </div>
             </div>
           </nav>
         </div>
