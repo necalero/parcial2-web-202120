@@ -26,7 +26,7 @@ export const Chart = ({ width = 600, height = 600, data }) => {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const y = d3.scaleLinear().domain([0, 600]).range([iheight, 0]);
+    const y = d3.scaleLinear().domain([0, 500]).range([iheight, 0]);
 
     const x = d3
       .scaleBand()
