@@ -34,6 +34,11 @@ function App() {
             path='/'
             element={<Home searchKey={searchState.searchKey} />}
           />
+          <Route
+            exact
+            path='/home'
+            element={<Home searchKey={searchState.searchKey} />}
+          />
           <Route exact path='/report' element={<Report />} />
         </Routes>
       </main>

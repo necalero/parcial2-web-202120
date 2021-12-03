@@ -22,7 +22,7 @@ export const NavBar = ({ onSearchKeyChange, setLanguage }) => {
           <h1>ISIS 3710</h1>
           <nav className='menu-items'>
             <div className='menu-links'>
-              <Link className='nav-item' aria-current='page' to='/'>
+              <Link className='nav-item' aria-current='page' to='/home'>
                 <FormattedMessage id='home'/>
               </Link>
               <Link className='nav-item' aria-current='page' to='/report'>
