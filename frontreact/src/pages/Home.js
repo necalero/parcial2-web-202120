@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { Card } from '../components/Card';
 import { FormattedMessage } from 'react-intl';
+import { getProductsService } from '../services/product';
 
 export const Home = ({ searchKey }) => {
   const [products, setProducts] = useState([]);
@@ -9,17 +9,13 @@ export const Home = ({ searchKey }) => {
   const URL = 'http://localhost:3001/api/products?q='+searchKeyState.searchKeyN;
   console.log(searchKey);
   console.log(URL);
-  useEffect(() => {
-    axios
-      .get(URL)
-      .then((res) => {
-        console.log(res.data);
-        setProducts((res.data));
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  useEffect( () => {
+    async function fetchData(){
+      const productsFetch = await getProductsService(searchKey);
+      setProducts(productsFetch);
+    }
+    fetchData();
+  }, [searchKey]);
 
   return (
     <section id='home'>
