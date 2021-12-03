@@ -1,0 +1,10 @@
+@use "../App.scss" as *;
+.lang-select-wrapper {
+  display: flex;
+}
+
+.lang-select {
+  padding: 20px;
+  color: white;
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+@use "../App.scss" as *;
+
+.card-wrapper {
+  border-color: black;
+  width: 20%;
+  text-align: center;
+  border-style: solid;
+  border-radius: 16px;
+  border-color: #ccc;
+}

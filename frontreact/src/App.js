@@ -13,6 +13,7 @@ function App() {
   const [language, setLanguage] = useState(LOCALES.SPANISH);
 
   const setSearchkey = (query) => {
+    console.log(query);
     setSearchState({ searchKey: query });
   };
 
